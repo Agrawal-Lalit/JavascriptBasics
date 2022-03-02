@@ -1,11 +1,13 @@
 const groupObjectsBy =(jsonArray, key)=>{
-
+         
+     
      return jsonArray.reduce((jar,obj)=>{
-        if( !jar[obj[key]]) jar[obj[key]]=[];    //jar.obj[key]!= jar[obj[key]] ??
+        if( !jar[obj[key]]) 
+          jar[obj[key]]=[];    //jar.obj[key]!= jar[obj[key]] ??
         jar[obj[key]]=[obj ,...jar[obj[key]]];
         return jar;
     },{});
-
+}
     // You cannot add a new property to an object 
     // constructor the same way you add a new property to an existing object:
 
@@ -21,11 +23,10 @@ const groupObjectsBy =(jsonArray, key)=>{
     //     json[key]=val;
     // });
     // return json;
-}
 
 console.log(groupObjectsBy([
     {channel:"A",name:"elex"},
-    {channel:"B",name:"elex"},
-    {channel:"C",name:"elex"},
-    {channel:"A",name:"elex"}
+    {channel:"B",name:"martin"},
+    {channel:"C",name:"kevin"},
+    {channel:"A",name:"beluga"}
 ],'channel'));
